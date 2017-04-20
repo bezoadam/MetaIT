@@ -63,7 +63,7 @@ class Reader(threading.Thread):
 		rwl.reader_acquire()
 		print (self, 'acquired')
 		time.sleep(5)
-		print (self, 'stop')
+		print (self, 'finish')
 		rwl.reader_release()
 		
 class Writer(threading.Thread):
@@ -72,7 +72,7 @@ class Writer(threading.Thread):
 		rwl.writer_acquire()
 		print (self, 'acquired')
 		time.sleep(15)
-		print (self, 'stop')
+		print (self, 'finish')
 		rwl.writer_release()
 
 if __name__ == '__main__' :
