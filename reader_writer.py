@@ -29,14 +29,14 @@ class RWLock:
 		self.__roomEmpty.release()
 
 
-	def run(self):
-		time.sleep(self.__init_sleep_time)
-		self.__rw_lock.reader_acquire()
-		self.entry_time = time.time()
-		time.sleep(self.__sleep_time)
-		self.buffer_read = copy.deepcopy(self.__buffer)
-		self.exit_time = time.time()
-		self.__rw_lock.reader_release()
+	# def run(self):
+	# 	time.sleep(self.__init_sleep_time)
+	# 	self.__rw_lock.reader_acquire()
+	# 	self.entry_time = time.time()
+	# 	time.sleep(self.__sleep_time)
+	# 	self.buffer_read = copy.deepcopy(self.__buffer)
+	# 	self.exit_time = time.time()
+	# 	self.__rw_lock.reader_release()
 
 class _LightSwitch:
 	def __init__(self):

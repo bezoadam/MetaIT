@@ -4,7 +4,7 @@ import sys
 import json
 import requests
 from operator import itemgetter
-# sys.path.insert(1,'/usr/local/lib/python3.5/site-packages/')
+sys.path.insert(1,'/usr/local/lib/python3.5/site-packages/')
 from bs4 import BeautifulSoup
 
 NHL_LINK = "https://www.ifortuna.cz/cz/sazeni/hokej/nhl"
