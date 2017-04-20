@@ -1,0 +1,61 @@
+{
+    "NHL": [
+        {
+            "rate": "1.75",
+            "team1": "Washington",
+            "team2": "Toronto"
+        },
+        {
+            "rate": "1.85",
+            "team1": "Pittsburgh",
+            "team2": "Columbus"
+        },
+        {
+            "rate": "1.95",
+            "team1": "Minnesota",
+            "team2": "St.Louis"
+        },
+        {
+            "rate": "2.15",
+            "team1": "Montreal",
+            "team2": "NY Rangers"
+        },
+        {
+            "rate": "2.3",
+            "team1": "Nashville",
+            "team2": "Chicago"
+        },
+        {
+            "rate": "2.3",
+            "team1": "Edmonton",
+            "team2": "S.Jose"
+        },
+        {
+            "rate": "2.55",
+            "team1": "Ottawa",
+            "team2": "Boston"
+        }
+    ],
+    "PREMIER_LEAGUE": [
+        {
+            "rate": "1.24",
+            "team1": "Man.Utd.",
+            "team2": "Anderlecht"
+        },
+        {
+            "rate": "2",
+            "team1": "Schalke",
+            "team2": "Ajax"
+        },
+        {
+            "rate": "2.64",
+            "team1": "Genk",
+            "team2": "Celta Vigo"
+        },
+        {
+            "rate": "2.95",
+            "team1": "Besiktas",
+            "team2": "Lyon"
+        }
+    ]
+}
