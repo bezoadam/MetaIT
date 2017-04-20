@@ -31,29 +31,29 @@
             "team2": "S.Jose"
         },
         {
-            "rate": "2.55",
+            "rate": "2.57",
             "team1": "Ottawa",
             "team2": "Boston"
         }
     ],
     "PREMIER_LEAGUE": [
         {
-            "rate": "1.24",
+            "rate": "1.27",
             "team1": "Man.Utd.",
             "team2": "Anderlecht"
         },
         {
-            "rate": "2",
+            "rate": "2.1",
             "team1": "Schalke",
             "team2": "Ajax"
         },
         {
-            "rate": "2.64",
+            "rate": "2.45",
             "team1": "Genk",
             "team2": "Celta Vigo"
         },
         {
-            "rate": "2.95",
+            "rate": "2.67",
             "team1": "Besiktas",
             "team2": "Lyon"
         }

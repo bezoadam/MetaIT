@@ -1,9 +1,12 @@
 #! /usr/bin/env python3
 
 import threading
+import time
+import copy
 
-class ReadWriteLock:
-	
+#signal = release
+#wait = acquire
+class RWLock:	
 	def __init__(self):
 		self.__readSwitch = _LightSwitch()
 		self.__roomEmpty = threading.Lock()
@@ -25,12 +28,17 @@ class ReadWriteLock:
 		self.__turnstile.release()
 		self.__roomEmpty.release()
 
-#signal = release
-#wait = acquire
+
+	def run(self):
+		time.sleep(self.__init_sleep_time)
+		self.__rw_lock.reader_acquire()
+		self.entry_time = time.time()
+		time.sleep(self.__sleep_time)
+		self.buffer_read = copy.deepcopy(self.__buffer)
+		self.exit_time = time.time()
+		self.__rw_lock.reader_release()
 
 class _LightSwitch:
-	"""An auxiliary "light switch"-like object. The first thread turns on the 
-	"switch", the last one turns it off (see [1, sec. 4.2.2] for details)."""
 	def __init__(self):
 		self.__counter = 0
 		self.__mutex = threading.Lock()
@@ -49,5 +57,37 @@ class _LightSwitch:
 			lock.release()
 		self.__mutex.release()
 
+class Reader(threading.Thread):
+	def run(self):
+		print (self, 'start')
+		rwl.reader_acquire()
+		print (self, 'acquired')
+		time.sleep(5)
+		print (self, 'stop')
+		rwl.reader_release()
+		
+class Writer(threading.Thread):
+	def run(self):
+		print (self, 'start')
+		rwl.writer_acquire()
+		print (self, 'acquired')
+		time.sleep(15)
+		print (self, 'stop')
+		rwl.writer_release()
+
 if __name__ == '__main__' :
-	print ('test')
+	rwl = RWLock()
+
+	Reader().start()
+	time.sleep(1)
+	Reader().start()
+	time.sleep(1)
+	Reader().start()
+	time.sleep(1)
+	Writer().start()
+	time.sleep(1)
+	Reader().start()
+	time.sleep(1)
+	Writer().start()
+	time.sleep(1)
+	Reader().start()
